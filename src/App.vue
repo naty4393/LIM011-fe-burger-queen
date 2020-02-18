@@ -1,32 +1,43 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- <a  href="/"><img src="../assets/logo2.png"></a> -->
+        <a class="navbar-brand" href="/">Burger Qeen</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <router-link class="nav-link" to="/">Inicio <span class="sr-only">(current)</span></router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/about">¿Quiénes somos?</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/choose-table">Elije Tu Mesa</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/choose-order">Elije Tu pedido</router-link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <router-view></router-view>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+export default {
+
 }
+</script>
 
-#nav {
-  padding: 30px;
+<style>
+@import url("../node_modules/bootstrap/dist/css/bootstrap.css");
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+@media (min-width: 768px) { 
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
