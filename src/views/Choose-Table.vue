@@ -10,6 +10,7 @@
       </select>
     </div>
     <section> 
+      <h4>¿Cuál es la mesa a escoger el pedido?</h4>
       <button type="button" class="btn btn-primary" @click="toinput('1')">1</button>
       <button type="button" class="btn btn-secondary" @click="toinput('2')">2</button>
       <button type="button" class="btn btn-success" @click="toinput('3')">3</button>
@@ -25,7 +26,7 @@
 </template>
 
 <script>
-import header1 from '@/components/header2.vue'
+import header1 from '@/components/header1.vue'
 
 export default {
   name: 'choose-table',

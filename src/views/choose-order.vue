@@ -1,9 +1,14 @@
 <template>
-<div>
+<div class="container">
+  <div class="row">
+    <div class="col">
       <barMenu/>
-    <order/>
+    </div>
+    <div class="col">
+      <order/>
+    </div>
+  </div>
 </div>
-
 </template>
 
 <script>
@@ -18,3 +23,13 @@ export default {
   }
 }
 </script>
+
+<style>
+.container{
+  width: 100%;
+  margin: 0 0 0 0 0;
+}
+.col{
+  padding: 15px 5px 15px 5px;
+}
+</style>
