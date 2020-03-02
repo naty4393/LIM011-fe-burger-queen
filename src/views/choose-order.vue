@@ -1,14 +1,16 @@
 <template>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <barMenu/>
-    </div>
-    <div class="col">
-      <order/>
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <barMenu/>
+        </div>
+        <div class="col">
+          <order/>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -19,7 +21,7 @@ export default {
   name: 'choose-order',
   components: {
     barMenu,
-    order
+    order,
   }
 }
 </script>

@@ -27,24 +27,23 @@ export default {
       products: [],
       order:[],
       counter: 0,
+      disable: true,
     }
   },
   methods : { 
     allMenu(option){
+        this.disable=false
         this.products = []
         console.log(db.collection(option));
         db.collection(option).get()
         .then((querySnapshot)=>{
           querySnapshot.forEach(doc => {
-            console.log('doc', doc);
-            console.log('doc.id', doc.id);
-            console.log(doc.data());
             const object = {
               producto: doc.id,
               descripcion: doc.data().descripcion,
               precio: doc.data().precio}
             this.products.push(object);
-            console.log('products', this.products);
+            this.disable=true;
           });
         }).catch((error) =>{
         console.error('Error:',error)

@@ -23,37 +23,37 @@
           <td><button @click="deleteProduct(index)">Eliminar</button></td>
         </tr>
       </tbody>
+      <tfoot>
+          <th scope="row"></th>
+          <td></td>
+          <td>total:</td>
+          <td>${{ this.$store.state.sumOrderTotal }}</td>
+          <td></td>
+      </tfoot>
     </table>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-        Enviar
-      </button>
-      <div>
-        <modal/>
-      </div>
+    <modal/>
   </div>
 </template>
 
 <script>
-import modal from './modal-confirmation'
+import modal from './modal-confirmation.vue'
+
 export default {
-	name: 'order',
-  props: {
-  },
+  name: 'order',
   components:{
     modal
   },
   data(){
     return {
-      productsOfOrder: this.$store.state.productsList
+      productsOfOrder: this.$store.state.productsList,
+      num:0,
     }
   },
   methods:{
-    sendList(){
-      console.log(this.productsOfOrder);
-    },
     deleteProduct(index){
       console.log(index);
       this.productsOfOrder.splice(index, 1);
+      this.$store.state.sumOrderTotal=0;
     }
   }
 }

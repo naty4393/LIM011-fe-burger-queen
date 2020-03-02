@@ -9,10 +9,8 @@ export default new Vuex.Store({
     table: 0,
     productsList:[],
     total: 0,
-    db:{},
-  },
-  getters:{
-    database: state => state.db
+    sumOrderTotal: 0,
+    signInWaitres:0,
   },
   mutations: {
     set(state, transaccion){ /*los parametros son el estado y la transacción 
@@ -47,7 +45,15 @@ export default new Vuex.Store({
           total,
         })
       }  
-    }
+    },
+    addSumTotal(state, sumaOfOrderTotal){
+      sumaOfOrderTotal.forEach(element => {
+        state.sumOrderTotal = state.sumOrderTotal + element.total
+      });
+    },
+    addSingInWaitress(state, waitress){
+      state.signInWaitres = waitress
+    },
   },
   actions: {
     saveTypeOfOrder(context, transaccion){
@@ -59,6 +65,12 @@ export default new Vuex.Store({
     saveOrder(context, listOrder){
       context.commit('addOrder', listOrder)      
     },
+    sumTotalOfTheOrder(context, sumaOfOrderTotal){
+      context.commit('addSumTotal', sumaOfOrderTotal)
+    },
+    addwaitress(context, waitress){
+      context.commit('addSingInWaitress', waitress)
+    }
   },
   modules: {
   }
