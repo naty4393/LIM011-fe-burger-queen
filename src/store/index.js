@@ -47,6 +47,7 @@ export default new Vuex.Store({
       }  
     },
     addSumTotal(state, sumaOfOrderTotal){
+      state.sumOrderTotal=0;
       sumaOfOrderTotal.forEach(element => {
         state.sumOrderTotal = state.sumOrderTotal + element.total
       });

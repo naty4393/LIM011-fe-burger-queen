@@ -48,7 +48,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="windowModal=false">cancelar</button>
-                <button type="button" class="btn btn-primary" @click="sendOrder(nameforORder,productsOfOrder, sumTotalOfOrder, inWaitress, new Date())">enviar</button>
+                <button type="button" class="btn btn-primary" @click="sendOrder(nameforORder,productsOfOrder, $store.state.sumOrderTotal, inWaitress, new Date())">enviar</button>
             </div>
             </div>
         </div>
@@ -67,7 +67,6 @@ export default {
 	data(){
     return {
 			productsOfOrder: this.$store.state.productsList,
-			sumTotalOfOrder: this.$store.state.sumOrderTotal,
 			inWaitress: this.$store.state.signInWaitres,
 			nameforORder:'',
 			oderComplete:[],
@@ -76,14 +75,6 @@ export default {
 	},
 	methods:{
     sendOrder(nameClient, listOrder, sumtotal, waitress, date){
-			console.log(this.productsOfOrder);
-			console.log(nameClient);
-			console.log(listOrder);
-			console.log(sumtotal);
-			console.log(waitress);
-			console.log(date);
-			
-			
 			db.collection('pedidos').add({
 				waitress,
 				nameClient,
@@ -91,11 +82,14 @@ export default {
 				sumtotal,
 				date,
 			})
+      this.$router.push('choose-table');
+      this.$store.state.productsList = [];
+      this.$store.state.sumOrderTotal = 0;
 		},
 		sendPedido(){
 			this.windowModal=true;
-      console.log(this.productsOfOrder);
-      this.$store.dispatch('sumTotalOfTheOrder',this.productsOfOrder );
+			console.log(this.productsOfOrder);
+			this.$store.dispatch('sumTotalOfTheOrder',this.productsOfOrder );
     },
 	}
 }
