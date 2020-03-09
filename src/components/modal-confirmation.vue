@@ -8,12 +8,12 @@
 	<div class="container-modal" v-if="windowModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Pedido: {{this.$store.state.selected}} - Mesa: {{this.$store.state.table}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true" @click="windowModal=false">&times;</span>
-                </button>
-            </div>
+              <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Pedido: {{this.$store.state.selected}} - Mesa: {{this.$store.state.table}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" @click="windowModal=false">&times;</span>
+                  </button>
+              </div>
             <div class="modal-body">
 							<div>
 								<label for="">Nombre del Cliente:</label>
@@ -75,7 +75,12 @@ export default {
 	},
 	methods:{
     sendOrder(nameClient, listOrder, sumtotal, waitress, date){
-			db.collection('pedidos').add({
+      console.log('nameClient', nameClient);
+      console.log('listOrder', listOrder);
+      console.log('sumtotal', sumtotal);
+      console.log('waitress', waitress);
+      console.log('date', date);
+      db.collection('pedidos').add({
 				waitress,
 				nameClient,
 				listOrder,
@@ -86,17 +91,35 @@ export default {
       this.$store.state.productsList = [];
       this.$store.state.sumOrderTotal = 0;
 		},
-		sendPedido(){
-			this.windowModal=true;
-			console.log(this.productsOfOrder);
-			this.$store.dispatch('sumTotalOfTheOrder',this.productsOfOrder );
+    sendPedido(){
+      this.windowModal=true;
+      console.log(this.productsOfOrder);
+      this.$store.dispatch('sumTotalOfTheOrder',this.productsOfOrder );
     },
-	}
+  }
 }
 </script>
 
 <style>
-/* .container-modal{
-	background: rgba(0, 0, 0, 0.5)
-} */
+.container-modal{
+	background: rgba(0, 0, 0, 0.5);
+  top:0;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal-dialog{
+  padding: 10px;
+  width: 100%;
+  margin: 40px auto;
+  background: white;
+  box-shadow: 0px 0px 10px black;
+}
+.modal-content{
+  background: white;
+}
+.modal-header{
+  background: coral;
+}
 </style>

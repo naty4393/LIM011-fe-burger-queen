@@ -1,12 +1,14 @@
 <template>
   <div class="home">
-    <header1 msg="Bienvenid@ a Burger Queen"/>
-    <div class="container">
+    <div class="title">
+      <header1 msg="Bienvenid@ a Burger Queen"/>
+    </div>
+    <div class="container container-home">
       <div class="row row-cols-2">
-        <div class="col">
+        <div class="col col-imagen">
           <img alt="Vue logo" src="../assets/hamburguesa.png">
         </div>
-        <div class="col">
+        <div class="col input-user">
           <form action="" @submit="checkForm">
             <inputUser/>
           </form>
@@ -35,6 +37,26 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-
+<style>
+.title{
+  text-align: center;
+}
+.container-home{
+  display: flex;
+  justify-content: space-around;
+}
+.col-imagen{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+img{
+  width: 450px;
+  height: auto;
+}
+.input-user{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
 </style>

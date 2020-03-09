@@ -18,6 +18,7 @@
         </div>
       </nav>
     <router-view></router-view>
+    <footer>create by Natalia LP : Frond-end Developer</footer>
   </div>
 </template>
 
@@ -30,7 +31,21 @@ export default {
 <style>
 @import url("../node_modules/bootstrap/dist/css/bootstrap.css");
 
-@media (min-width: 768px) { 
-
+@media (min-width: 600px) { 
+html{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+footer {
+  text-align: center;
+  margin-top: 400px;
+  background-color: rgba(212, 114, 33, 0.849);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  color:black;
+}
 }
 </style>

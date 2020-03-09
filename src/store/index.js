@@ -13,9 +13,9 @@ export default new Vuex.Store({
     signInWaitres:0,
   },
   mutations: {
-    set(state, transaccion){ /*los parametros son el estado y la transacción 
+    setTypeOrder(state, transaccion){ /*los parametros son el estado y la transacción 
       va a ser un objeto que va a tener dos propiedades*/
-      state[transaccion.destino] = transaccion.value
+      state.selected = transaccion;
     },
     addTable(state,orderTable){
       if (orderTable > 0)
@@ -58,7 +58,7 @@ export default new Vuex.Store({
   },
   actions: {
     saveTypeOfOrder(context, transaccion){
-      context.commit('set',transaccion)
+      context.commit('setTypeOrder',transaccion)
     },
     changeOfOrderTable(context, orderTable){
       context.commit('addTable', orderTable)
