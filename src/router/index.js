@@ -35,13 +35,13 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/choose-order.vue')
   },
   {
-    path: '/playground',
-    name: 'playground',
+    path: '/watch-order',
+    name: 'watch-order',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/playground.vue')
-  }
+    component: () => import(/* webpackChunkName: "about" */ '../views/watch-order.vue')
+  },
 ]
 
 const router = new VueRouter({

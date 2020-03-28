@@ -36,8 +36,8 @@ export default {
     },
     methods: {
         toinput(number){
-        this.number = number;
-        this.$store.dispatch('changeOfOrderTable', this.number );
+          this.number = number;
+          this.$store.dispatch('changeOfOrderTable', this.number );
         },
     }
 }

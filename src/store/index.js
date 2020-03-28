@@ -11,6 +11,7 @@ export default new Vuex.Store({
     total: 0,
     sumOrderTotal: 0,
     signInWaitres:0,
+    getLisOfOrders: [],
   },
   mutations: {
     setTypeOrder(state, transaccion){ /*los parametros son el estado y la transacción 
@@ -21,9 +22,9 @@ export default new Vuex.Store({
       if (orderTable > 0)
      { state.table = orderTable;}
     },
-    'SET_DATABASE': (state, db) => {
+/*     'SET_DATABASE': (state, db) => {
       state.db = db
-    },
+    }, */
     addOrder(state, listOrder) {
 
       let existe = false;
@@ -55,6 +56,9 @@ export default new Vuex.Store({
     addSingInWaitress(state, waitress){
       state.signInWaitres = waitress
     },
+    getListOfOrders(state, orders){
+      state.getLisOfOrders.push(orders)
+    },
   },
   actions: {
     saveTypeOfOrder(context, transaccion){
@@ -71,7 +75,10 @@ export default new Vuex.Store({
     },
     addwaitress(context, waitress){
       context.commit('addSingInWaitress', waitress)
-    }
+    },
+    saveListOfOrders(context, orders){
+      context.commit('getListOfOrders', orders)
+    },
   },
   modules: {
   }

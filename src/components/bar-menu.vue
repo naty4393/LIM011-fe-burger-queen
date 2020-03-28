@@ -15,8 +15,7 @@
 </template>
 
 <script>
-import {db} from '@/firebase/init'
-import 'firebase'
+import {chooseProduct} from '../firebase/function-firestore.js'
 
 export default {
   name: 'bar-menu',
@@ -34,8 +33,7 @@ export default {
     allMenu(option){
         this.disable=false
         this.products = []
-        console.log(db.collection(option));
-        db.collection(option).get()
+        chooseProduct(option)
         .then((querySnapshot)=>{
           querySnapshot.forEach(doc => {
             const object = {
@@ -59,6 +57,7 @@ export default {
   }
 }
 </script>
+
 <style>
   .button-add{
     padding: 5px 7px 5px 7px;

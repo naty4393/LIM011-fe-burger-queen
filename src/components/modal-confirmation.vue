@@ -48,7 +48,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="windowModal=false">cancelar</button>
-                <button type="button" class="btn btn-primary" @click="sendOrder(nameforORder,productsOfOrder, $store.state.sumOrderTotal, inWaitress, new Date())">enviar</button>
+                <button type="button" class="btn btn-primary" @click="sendOrder(nameforORder,productsOfOrder, $store.state.sumOrderTotal, inWaitress, fecha)">Confirmar envio</button>
             </div>
             </div>
         </div>
@@ -57,8 +57,7 @@
 </template>
 
 <script>
-import {db} from '@/firebase/init'
-import 'firebase'
+import {addOrder} from '../firebase/function-firestore.js'
 
 export default {
 	name: 'modal',
@@ -70,23 +69,13 @@ export default {
 			inWaitress: this.$store.state.signInWaitres,
 			nameforORder:'',
 			oderComplete:[],
-			windowModal:false,
+      windowModal:false,
+      fecha: this.dateOfOrder(),
     }
 	},
 	methods:{
     sendOrder(nameClient, listOrder, sumtotal, waitress, date){
-      console.log('nameClient', nameClient);
-      console.log('listOrder', listOrder);
-      console.log('sumtotal', sumtotal);
-      console.log('waitress', waitress);
-      console.log('date', date);
-      db.collection('pedidos').add({
-				waitress,
-				nameClient,
-				listOrder,
-				sumtotal,
-				date,
-			})
+      addOrder(nameClient, listOrder, sumtotal, waitress, date);
       this.$router.push('choose-table');
       this.$store.state.productsList = [];
       this.$store.state.sumOrderTotal = 0;
@@ -96,6 +85,18 @@ export default {
       console.log(this.productsOfOrder);
       this.$store.dispatch('sumTotalOfTheOrder',this.productsOfOrder );
     },
+    dateOfOrder(){
+      const date = new Date();
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+      console.log(year);
+      const hours = +date.getHours()
+      const minutes = +date.getMinutes()
+      const seconds = +date.getSeconds()
+      const dateOfOrder = `${day}/${month}/${year} - ${hours}:${minutes}:${seconds}`;
+      return dateOfOrder;
+    }
   }
 }
 </script>

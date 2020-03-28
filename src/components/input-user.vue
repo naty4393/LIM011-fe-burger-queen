@@ -34,8 +34,7 @@
 </template>
 
 <script>
-import {db} from '@/firebase/init'
-import 'firebase'
+import { getUsers } from '../firebase/function-firestore.js'
 
 export default {
   name: 'input-user',
@@ -44,7 +43,7 @@ export default {
         number:'',
         user:'',
         password:'',
-        flag: true
+        flag: true,
     }
   },
   components: {
@@ -63,16 +62,20 @@ export default {
       }
     },
     confirmUser(){
-      console.log(db.collection('user'));
-        db.collection('user').get()
-          .then((querySnapshot)=>{
+      getUsers()
+        .then((querySnapshot)=>{
           querySnapshot.forEach(doc => {
-                if (doc.data().usuario == this.user && doc.data().contraseña==this.password ) {
-                this.$store.dispatch('addwaitress', this.user)
+            if (doc.data().usuario == this.user && doc.data().contraseña==this.password ) {
+              this.$store.dispatch('addwaitress', this.user)
+              if (doc.data().personal == 'mesero') {
                 this.$router.push('choose-table');
+              }else if (doc.data().personal == 'cheff') {
+                this.$router.push('watch-order');
+              }
             }
           })
         })
+      
     }
   }
 }

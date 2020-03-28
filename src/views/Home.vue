@@ -6,7 +6,7 @@
     <div class="container container-home">
       <div class="row row-cols-2">
         <div class="col col-imagen">
-          <img alt="Vue logo" src="../assets/hamburguesa.png">
+          <imagen/>
         </div>
         <div class="col input-user">
           <form action="" @submit="checkForm">
@@ -22,12 +22,14 @@
 // @ is an alias to /src
 import header1 from '@/components/header1.vue'
 import inputUser from '@/components/input-user.vue'
+import imagen from '@/components/img.vue'
 
 export default {
   name: 'Home',
   components: {
     header1,
     inputUser,
+    imagen,  
   },
   methods: {
     checkForm: function (e) {

@@ -1,5 +1,6 @@
-import MockFirebase from 'mock-cloud-firestore';
-import inputUser from '@/components/input-user.vue'
+/* import MockFirebase from 'mock-cloud-firestore';
+import { getUsers } from '../src/firebase/function-firestore.js';
+
 const fixtureData = {
     __collection__: {
       user: {
@@ -13,15 +14,15 @@ const fixtureData = {
     }
   }
 
-  global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
+global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
 
 describe('inputUser', () => {
     it('deberia encontrar al usuario', (done) => {
-      return inputUser.methods.confirmUser().then((result)=>{
+      return getUsers().then((result)=>{
         console.log(result.data());
         expect(result.data().usuario).toBe('72154488');
         done();
       })
     })
-  }) 
+  })  */
