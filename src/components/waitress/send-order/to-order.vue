@@ -16,7 +16,7 @@
       </thead>
       <tbody>
         <tr v-for="({product, price, click, total}, index) in productsOfOrder" :key="index">
-          <th scope="row">{{ click }}<!-- cantidad --></th>
+          <th scope="row">{{ click }}<!-- <button @click="subtract(click)"> - </button> --></th>
           <td>{{ product }}<!-- pedido --></td>
           <td>${{ price }}<!-- precio unitario --></td>
           <td>${{ total }}<!-- total --></td>
@@ -46,6 +46,7 @@ export default {
   data(){
     return {
       productsOfOrder: this.$store.state.productsList,
+      clicket:this.$store.state.productsList.click,
       num:0,
     }
   },
@@ -54,7 +55,12 @@ export default {
       console.log(index);
       this.productsOfOrder.splice(index, 1);
       this.$store.state.sumOrderTotal=0;
-    }
+    },
+/*     subtract(click){
+      this.productsOfOrder.click = click -1;
+      console.log(this.productsOfOrder);
+      
+    } */
   }
 }
 </script>

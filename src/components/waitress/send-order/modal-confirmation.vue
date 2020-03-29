@@ -31,7 +31,7 @@
 								</thead>
 								<tbody>
 									<tr v-for="({product, price, click, total}, index) in productsOfOrder" :key="index">
-										<th scope="row">{{ click }}<!-- cantidad --></th>
+										<th scope="row">{{ click }}</th>
 										<td>{{ product }}<!-- pedido --></td>
 										<td>${{ price }}<!-- precio unitario --></td>
 										<td>${{ total }}<!-- total --></td>
@@ -90,12 +90,11 @@ export default {
       const day = date.getDate();
       const month = date.getMonth() + 1;
       const year = date.getFullYear();
-      console.log(year);
       const hours = +date.getHours()
       const minutes = +date.getMinutes()
       const seconds = +date.getSeconds()
       const dateOfOrder = `${day}/${month}/${year} - ${hours}:${minutes}:${seconds}`;
-      return dateOfOrder;
+      return dateOfOrder; 
     }
   }
 }
