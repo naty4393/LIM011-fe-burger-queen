@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { getUsers } from '../firebase/function-firestore.js'
+import { getUsers } from '@/firebase/function-firestore.js'
 
 export default {
   name: 'input-user',

@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import barMenu from '@/components/bar-menu.vue'
-import order from '../components/to-order.vue'
+import barMenu from '../components/waitress/send-order/bar-menu.vue'
+import order from '../components/waitress/send-order/to-order.vue'
 
 export default {
   name: 'choose-order',

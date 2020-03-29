@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import {addOrder} from '../firebase/function-firestore.js'
+import {addOrder} from '@/firebase/function-firestore.js'
 
 export default {
 	name: 'modal',
