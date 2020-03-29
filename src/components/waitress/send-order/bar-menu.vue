@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import {chooseProduct} from '../firebase/function-firestore.js'
+import {chooseProduct} from '@/firebase/function-firestore.js'
 
 export default {
   name: 'bar-menu',

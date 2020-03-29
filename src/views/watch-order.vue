@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import getOrder from '../components/get-order.vue'
+import getOrder from '../components/cheff/get-order/get-order.vue'
 export default {
   name: 'watch-order',
   components:{
