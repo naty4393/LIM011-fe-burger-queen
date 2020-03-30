@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="../assets/hamburguesa.png">
+  <img alt="Vue logo" src="@/assets/hamburguesa.png">
 </template>
 
 <script>
