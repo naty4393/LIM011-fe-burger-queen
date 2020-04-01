@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import selectOrder from '../components/waitress/selec-table/select-order'
-import header1 from '@/components/home/header1.vue'
+import selectOrder from '../components/waitress/selec-table/select-order.vue'
+import header1 from '../components/home/header1.vue'
 import chooseNumberTable from '../components/waitress/selec-table/choose-number-table.vue'
 
 export default {
