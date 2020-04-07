@@ -59,7 +59,6 @@ export default new Vuex.Store({
       state.getLisOfOrders.push(orders)
     },
     saveListOfOrders(state, orders){
-      /* state.listOfReadyOrders = []; */
       state.listOfReadyOrders.push(orders)
     }
   },

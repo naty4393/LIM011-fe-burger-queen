@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import header1 from '@/components/header1.vue'
+import header1 from '@/components/home/header1.vue'
 
 describe('header1', () => {
   it('renders props.msg when passed', () => {

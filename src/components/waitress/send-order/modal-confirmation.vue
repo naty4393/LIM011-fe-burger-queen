@@ -80,6 +80,7 @@ export default {
       this.$router.push('choose-table');
       this.$store.state.productsList = [];
       this.$store.state.sumOrderTotal = 0;
+      alert('se ha confirmado pedido')
 		},
     sendPedido(){
       this.windowModal=true;

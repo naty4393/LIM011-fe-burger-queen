@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import chooseNumberTable from '@/components/choose-number-table.vue'
+import chooseNumberTable from '@/components/waitress/selec-table/choose-number-table.vue'
 
 describe('chooseNumberTable', () => {
   const wrapper = mount(chooseNumberTable)

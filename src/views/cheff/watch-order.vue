@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import getOrder from '../components/cheff/get-order/get-order.vue'
-import readyOrder from '../components/cheff/ready-order/ready-order.vue'
+import getOrder from '@/components/cheff/get-order/get-order.vue'
+import readyOrder from '@/components/cheff/ready-order/ready-order.vue'
 
 export default {
   name: 'watch-order',
