@@ -20,9 +20,9 @@
 
 <script>
 // @ is an alias to /src
-import header1 from '../components/home/header1.vue'
-import inputUser from '../components/home/input-user.vue'
-import imagen from '../components/home/img.vue'
+import header1 from '@/components/home/header1.vue'
+import inputUser from '@/components/home/input-user.vue'
+import imagen from '@/components/home/img.vue'
 
 export default {
   name: 'Home',
