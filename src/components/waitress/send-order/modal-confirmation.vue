@@ -48,7 +48,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="windowModal=false">cancelar</button>
-                <button type="button" class="btn btn-primary" @click="sendOrder(nameforORder,productsOfOrder, $store.state.sumOrderTotal, inWaitress, fecha)">Confirmar envio</button>
+                <button type="button" class="btn btn-primary" @click="sendOrder(nameforORder,productsOfOrder, $store.state.sumOrderTotal, inWaitress, fecha, hour)">Confirmar envio</button>
             </div>
             </div>
         </div>
@@ -70,12 +70,13 @@ export default {
 			nameforORder:'',
 			oderComplete:[],
       windowModal:false,
-      fecha: this.dateOfOrder(),
+      fecha: this.dayOfOrder(),
+      hour: this.hourOfOrder(),
     }
 	},
 	methods:{
-    sendOrder(nameClient, listOrder, sumtotal, waitress, date){
-      addOrder(nameClient, listOrder, sumtotal, waitress, date);
+    sendOrder(nameClient, listOrder, sumtotal, waitress, day, hour){
+      addOrder(nameClient, listOrder, sumtotal, waitress, day, hour);
       this.$router.push('choose-table');
       this.$store.state.productsList = [];
       this.$store.state.sumOrderTotal = 0;
@@ -85,16 +86,21 @@ export default {
       console.log(this.productsOfOrder);
       this.$store.dispatch('sumTotalOfTheOrder',this.productsOfOrder );
     },
-    dateOfOrder(){
+    dayOfOrder(){
       const date = new Date();
       const day = date.getDate();
       const month = date.getMonth() + 1;
       const year = date.getFullYear();
+      const dayOfOrder = `${day}/${month}/${year}`;
+      return dayOfOrder; 
+    },
+    hourOfOrder(){
+      const date = new Date();
       const hours = +date.getHours()
       const minutes = +date.getMinutes()
       const seconds = +date.getSeconds()
-      const dateOfOrder = `${day}/${month}/${year} - ${hours}:${minutes}:${seconds}`;
-      return dateOfOrder; 
+      const hourOfOrder = `${hours}:${minutes}:${seconds}`;
+      return hourOfOrder; 
     }
   }
 }
