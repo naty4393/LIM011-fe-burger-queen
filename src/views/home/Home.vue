@@ -1,7 +1,8 @@
 <template>
-  <div class="home">
+  <div class="home">   
     <div class="title">
       <header1 msg="Bienvenid@ a Burger Queen"/>
+          <User/>
     </div>
     <div class="container container-home">
       <div class="row row-cols-2">
@@ -23,13 +24,15 @@
 import header1 from '@/components/home/header1.vue'
 import inputUser from '@/components/home/input-user.vue'
 import imagen from '@/components/home/img.vue'
+import User from '@/components/home/User.vue'
 
 export default {
   name: 'Home',
   components: {
     header1,
     inputUser,
-    imagen,  
+    imagen, 
+    User, 
   },
   methods: {
     checkForm: function (e) {
