@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fa52e97d3b66d49242cb",
+    "revision": "42b299064dc58678739b",
     "url": "/LIM011-fe-burger-queen/css/about.d06692d8.css"
   },
   {
-    "revision": "c8c8c2e61b1247e6de57",
-    "url": "/LIM011-fe-burger-queen/css/app.e8812d14.css"
+    "revision": "6b21e97845998bed15f8",
+    "url": "/LIM011-fe-burger-queen/css/app.0529849c.css"
   },
   {
     "revision": "5b7eaaa60ebc6d902fd6",
@@ -16,16 +16,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/LIM011-fe-burger-queen/img/hamburguesa.a68f6fea.png"
   },
   {
-    "revision": "cf94e525ded26c9ce0cae9f48181f0f8",
+    "revision": "7101d904fec431b2c28ae26165ab6aab",
     "url": "/LIM011-fe-burger-queen/index.html"
   },
   {
-    "revision": "fa52e97d3b66d49242cb",
-    "url": "/LIM011-fe-burger-queen/js/about.fbd93b8e.js"
+    "revision": "42b299064dc58678739b",
+    "url": "/LIM011-fe-burger-queen/js/about.4592efac.js"
   },
   {
-    "revision": "c8c8c2e61b1247e6de57",
-    "url": "/LIM011-fe-burger-queen/js/app.7405633a.js"
+    "revision": "6b21e97845998bed15f8",
+    "url": "/LIM011-fe-burger-queen/js/app.442894b5.js"
   },
   {
     "revision": "5b7eaaa60ebc6d902fd6",

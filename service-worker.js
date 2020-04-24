@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/LIM011-fe-burger-queen/precache-manifest.d0feeb292841417067e0640792f86946.js"
+  "/LIM011-fe-burger-queen/precache-manifest.1c6318fdb2f1e026532e96aae978471c.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "burger-vuex"});
