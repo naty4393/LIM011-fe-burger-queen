@@ -39,7 +39,8 @@ export default {
             const object = {
               producto: doc.id,
               descripcion: doc.data().descripcion,
-              precio: doc.data().precio}
+              precio: doc.data().precio,
+            }
             this.products.push(object);
             this.disable=true;
           });
